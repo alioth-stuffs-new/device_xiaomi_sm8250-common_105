@@ -74,9 +74,9 @@ MALLOC_SVELTE_FOR_LIBC32 := true
 TARGET_CAMERA_PACKAGE_NAME := com.android.camera
 
 # Camera - HIDL overrideFormat
-TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT = true
+#TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT = true
 # Camera - HIDL overrideFormat - Alternative Version
-TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED = true
+#TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED = true
 
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x546C00000000
@@ -94,7 +94,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 endif
 
 # Init
-TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_kona
+$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):init_xiaomi_kona)
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
@@ -121,7 +121,7 @@ KERNEL_CC := CC=clang
 override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
 
 # Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+#TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # Media
 TARGET_USES_ION := true
